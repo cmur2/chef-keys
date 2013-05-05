@@ -28,6 +28,7 @@ describe 'keys::default' do
         'id_rsa.pub' => "ssh-rsa blub\n"
       }
     }
+    chef_runner.node.set['etc']['passwd']['foo-0815']['dir'] = '/home/foo'
     chef_run = chef_runner.converge 'keys::default'
     expect(chef_run).to create_file_with_content '/home/foo/.ssh/id_rsa.pub', 'ssh-rsa'
   end
@@ -38,6 +39,7 @@ describe 'keys::default' do
         'id_rsa' => "-----BEGIN RSA PRIVATE KEY-----\nblub\n"
       }
     }
+    chef_runner.node.set['etc']['passwd']['foo-0815']['dir'] = '/home/foo'
     chef_run = chef_runner.converge 'keys::default'
     expect(chef_run).to create_file_with_content '/home/foo/.ssh/id_rsa', '-----BEGIN RSA PRIVATE KEY-----'
   end
