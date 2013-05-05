@@ -11,7 +11,7 @@ describe 'keys::default' do
   end
   
   it 'creates .ssh directory in home dir' do
-    chef_runner.node.set['keys']['users'] = {
+    chef_runner.node.set['ssh_keys']['users'] = {
       'foo-0815' => {},
       'bar-0815' => {}
     }
@@ -23,7 +23,7 @@ describe 'keys::default' do
   end
 
   it 'creates public keys' do
-    chef_runner.node.set['keys']['users'] = {
+    chef_runner.node.set['ssh_keys']['users'] = {
       'foo' => {
         'id_rsa.pub' => "ssh-rsa blub\n"
       }
@@ -33,7 +33,7 @@ describe 'keys::default' do
   end
   
   it 'creates private keys' do
-    chef_runner.node.set['keys']['users'] = {
+    chef_runner.node.set['ssh_keys']['users'] = {
       'foo' => {
         'id_rsa' => "-----BEGIN RSA PRIVATE KEY-----\nblub\n"
       }

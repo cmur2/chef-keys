@@ -20,7 +20,7 @@ Any *nix.
 
 ### default
 
-Reads hash of user_name => config mappings from `node['keys']['users']` where the config is a hash of key_file_name => key_content mappings.
+Reads hash of user_name => config mappings from `node['ssh_keys']['users']` where the config is a hash of key_file_name => key_content mappings.
 
 ## License
 

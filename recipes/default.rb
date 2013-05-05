@@ -1,5 +1,5 @@
 
-node['keys']['users'].each do |user,config|
+node['ssh_keys']['users'].each do |user,config|
   ssh_dir = "#{node['etc']['passwd'][user]['dir']}/.ssh"
 
   directory ssh_dir do

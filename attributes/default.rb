@@ -1,2 +1,2 @@
 
-default['keys']['users'] = {}
+default['ssh_keys']['users'] = {}
