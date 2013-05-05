@@ -24,7 +24,7 @@ describe 'keys::default' do
 
   it 'creates public keys' do
     chef_runner.node.set['ssh_keys']['users'] = {
-      'foo' => {
+      'foo-0815' => {
         'id_rsa.pub' => "ssh-rsa blub\n"
       }
     }
@@ -35,7 +35,7 @@ describe 'keys::default' do
   
   it 'creates private keys' do
     chef_runner.node.set['ssh_keys']['users'] = {
-      'foo' => {
+      'foo-0815' => {
         'id_rsa' => "-----BEGIN RSA PRIVATE KEY-----\nblub\n"
       }
     }
